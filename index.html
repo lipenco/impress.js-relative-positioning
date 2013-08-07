@@ -79,14 +79,15 @@ var toNumber = function (numeric, fallback) {
 
 var elements = document.querySelectorAll(".step"); 
 for (var index = 0; index < elements.length; index++) {
-    n = elements[index].dataset.x;
+   elements[index].dataset.x = n;
         if (n.substring(0,2) == '+=') {
-           position = toNumber(elements[index-1]) + n
+           position = toNumber(elements[index-1]) + n;
+           elements[index].dataset.x = position; 
         }
-    elements[index].dataset.x = position; 
+    
     }
 }
-
+</script>
 
 
 // var toNumberRelative = function (numeric, base) {
@@ -106,7 +107,7 @@ for (var index = 0; index < elements.length; index++) {
 
 
 
-</script>
+
 
 
 
