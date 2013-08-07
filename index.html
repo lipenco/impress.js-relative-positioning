@@ -73,18 +73,14 @@
 
 <script>
 function relativePositioning() {
-var toNumber = function (numeric, fallback) {
-        return isNaN(numeric) ? (fallback || 0) : Number(numeric);
-    }
-
 var elements = document.querySelectorAll(".step"); 
 for (var index = 0; index < elements.length; index++) {
-   elements[index].dataset.x = n;
+  var  n = elements[index].dataset.x;
+  var lastStep = elements[index-1].dataset.x;
         if (n.substring(0,2) == '+=') {
-           position = toNumber(elements[index-1]) + n;
-           elements[index].dataset.x = position; 
+           n = lastStep + n;
+           
         }
-    
     }
 }
 </script>
