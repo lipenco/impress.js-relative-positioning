@@ -71,9 +71,38 @@
 </div>
 
 
+<script>
+function relativePositioning() { 
+var elements = document.querySelectorAll(".step");
+for (var index = 0; index < elements.length; index++) {
+     elements[index].dataset.x = numeric;
+}
+
+var toNumberRelative = function (numeric, base) {
+  var n;
+  if (numeric == undefined) {
+     n = base;
+  } else if (numeric.substring(0,2) == '+=') {
+     n = base + toNumber(numeric.substring(2,numeric.length));
+  } else if (numeric.substring(0,2) == '-=') {
+      n = base - toNumber(numeric.substring(2,numeric.length));
+  } else {
+     n = toNumber(numeric, base);
+  }
+  return n
+}
+
+for (var index = 0; index < elements.length; index++) {
+        elements[index].dataset.x = n; 
+}
+
+</script>
+
+
+
 <script src="js/impress-layouts.js"> </script>
 <script src="js/impress.js"> </script>
-<script>  impress().init();</script>
+<script> impress().init();</script>
 
 
 
