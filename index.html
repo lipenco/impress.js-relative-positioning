@@ -75,34 +75,17 @@
 function relativePositioning() {
 var elements = document.querySelectorAll(".step"); 
 for (var index = 0; index < elements.length; index++) {
-  var  n = elements[index].dataset.x;
-  var lastStep = elements[index-1].dataset.x;
+   String(elements[index].dataset.x) = n;
+   String(elements[index-1].dataset.x) = lastStep;
         if (n.substring(0,2) == '+=') {
-           n = lastStep + n;
-           
+           n = lastStep + n;         
+        }
+        else {
+           n = elements[index].dataset.x;
         }
     }
 }
 </script>
-
-
-// var toNumberRelative = function (numeric, base) {
-//   var n;
-//   if (numeric == undefined) {
-//      n = base;
-//   } else if (numeric.substring(0,2) == '+=') {
-//      n = base + toNumber(numeric.substring(2,numeric.length));
-//   } else if (numeric.substring(0,2) == '-=') {
-//       n = base - toNumber(numeric.substring(2,numeric.length));
-//   } else {
-//      n = toNumber(numeric, base);
-//   }
-//   return n
-//  }
-// }
-
-
-
 
 
 
