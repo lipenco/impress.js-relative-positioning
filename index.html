@@ -75,13 +75,14 @@
 function relativePositioning() {
 var elements = document.querySelectorAll(".step"); 
 for (var index = 0; index < elements.length; index++) {
+   // var string = (/regular expresion to fing +)
    var n = elements[index].dataset.x;
-        if (n.substring(0,2) === '+=') {
+        if (string.substring(0,2) === '+=') {
            var lastStep = elements[index-1].dataset.x;
            var position = lastStep + n;
            elements[index].dataset.x = position;         
         }
-        else {
+        else {     
            elements[index].dataset.x = n; 
         }
     }
