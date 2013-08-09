@@ -1,7 +1,13 @@
 function relativePositioning() {
     var elements = document.querySelectorAll(".step");
+
     for (var i = 0; i < elements.length; i++) {
         var x = elements[i].dataset.x;
+     if (elements[i].dataset.x == undefined) 
+        { x = "0";}
+        if (!elements[i].dataset.x) {
+        x = 0;
+        }
         if (x.substring(0, 1) === '+') {
             var lastStep = elements[i - 1].dataset.x;
             var position = parseInt(lastStep) + parseInt(x);
@@ -16,6 +22,8 @@ function relativePositioning() {
     }
     for (var i = 0; i < elements.length; i++) {
         var y = elements[i].dataset.y;
+        if (elements[i].dataset.y == undefined) 
+        { y = "0";}
         if (y.substring(0, 1) === '+') {
             var lastStep = elements[i - 1].dataset.y;
             var position = parseInt(lastStep) + parseInt(y);
