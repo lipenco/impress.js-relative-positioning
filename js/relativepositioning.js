@@ -2,7 +2,6 @@ function relativePositioning() {
 var elements = document.querySelectorAll(".step"); 
 for (var i = 0; i < elements.length; i++) {
    var x = elements[i].dataset.x;
-   
         if (x.substring(0,1) === '+') {
            var lastStep = elements[i-1].dataset.x;      
            var position = parseInt(lastStep) + parseInt(x);
