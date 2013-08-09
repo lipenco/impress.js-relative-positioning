@@ -29,11 +29,11 @@
         <q>slide 1</q>
     </div>
     
-    <div class="step slide" data-x="+2000">
+    <div class="step slide" data-x="+1000">
         <q>slide 2</q>
     </div>
 
-    <div  class="step slide"  data-x="+1000">
+    <div  class="step slide"  data-x="-3000">
         <q>slide 3</q>
     </div>
 
@@ -80,6 +80,11 @@ for (var index = 0; index < elements.length; index++) {
            var lastStep = elements[index-1].dataset.x;
            var position = parseInt(lastStep) + parseInt(n);
            elements[index].dataset.x = position;         
+        }
+        else if (n.substring(0,0) === '-') {
+           var lastStep = elements[index-1].dataset.x;
+           var position = parseInt(lastStep) - parseInt(n);
+           elements[index].dataset.x = position; 
         }
         else {     
            elements[index].dataset.x = n; 
