@@ -25,43 +25,43 @@
 
 <div id="impress">
 
-    <div class="step slide" data-x="1000">
+    <div class="step slide" data-x="1000" data-y="1000">
         <q>slide 1</q>
     </div>
     
-    <div class="step slide" data-x="+1000">
+    <div class="step slide" data-x="+1000" data-y="+1000">
         <q>slide 2</q>
     </div>
 
-    <div  class="step slide"  data-x="-3000">
+    <div  class="step slide"  data-x="-3000" data-y="+1000">
         <q>slide 3</q>
     </div>
 
-   <div  class="step slide"  data-x="+2000">
+   <div  class="step slide"  data-x="+2000" data-y="+1000">
         <q>slide 4</q>
     </div>
 
-    <div  class="step slide" data-x="+1000">
+    <div  class="step slide" data-x="+1000" data-y="+1000">
         <q>slide 5</q>
     </div>
 
-    <div  class="step slide"  data-x="+2000">
+    <div  class="step slide"  data-x="+2000" data-y="+2000">
         <q>slide 6</q>
     </div>
 
-    <div  class="step slide"  data-x="+1000">
+    <div  class="step slide"  data-x="+1000" data-y="+1000">
         <q>slide 7</q>
     </div>
 
-      <div  class="step slide"  data-x="+2000">
+      <div  class="step slide"  data-x="+2000" data-y="+2000">
         <q>slide 8</q>
     </div>
 
-    <div  class="step slide"  data-x="+1000">
-        <q>slide 8</q>
+    <div  class="step slide"  data-x="+1000" data-y="+1000">
+        <q>slide 9</q>
     </div>
 
-       <div  class="step slide"  data-x="+2000">
+       <div  class="step slide"  data-x="+2000" data-y="+2000">
         <q>slide 10</q>
     </div>
     
@@ -71,32 +71,12 @@
 </div>
 
 
-<script>
-function relativePositioning() {
-var elements = document.querySelectorAll(".step"); 
-for (var index = 0; index < elements.length; index++) {
-   var n = elements[index].dataset.x;
-        if (n.substring(0,1) === '+') {
-           var lastStep = elements[index-1].dataset.x;
-           var position = parseInt(lastStep) + parseInt(n);
-           elements[index].dataset.x = position;         
-        }
-        else if (n.substring(0,0) === '-') {
-           var lastStep = elements[index-1].dataset.x;
-           var position = parseInt(lastStep) - parseInt(n);
-           elements[index].dataset.x = position; 
-        }
-        else {     
-           elements[index].dataset.x = n; 
-        }
-    }
-}
-</script>
 
 
 
 
-<script src="js/impress-layouts.js"> </script>
+
+<script src="js/relativepositioning.js"> </script>
 <script src="js/impress.js"> </script>
 <script> relativePositioning(); impress().init();</script>
 
