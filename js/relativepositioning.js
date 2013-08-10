@@ -2,7 +2,9 @@ function relativePositioning() {
     var elements = document.querySelectorAll(".step");
 
     for (var i = 0; i < elements.length; i++) {
-        var x = elements[i].dataset.x;
+        var x = elements[i].dataset.x; 
+        var y = elements[i].dataset.y;
+        var z = elements[i].dataset.z;
      if (elements[i].dataset.x == undefined) 
         { x = "0";}
         if (!elements[i].dataset.x) {
@@ -19,11 +21,10 @@ function relativePositioning() {
         } else {
             elements[i].dataset.x = x;
         }
-    }
-    for (var i = 0; i < elements.length; i++) {
-        var y = elements[i].dataset.y;
+
         if (elements[i].dataset.y == undefined) 
         { y = "0";}
+
         if (y.substring(0, 1) === '+') {
             var lastStep = elements[i - 1].dataset.y;
             var position = parseInt(lastStep) + parseInt(y);
@@ -34,6 +35,21 @@ function relativePositioning() {
             elements[i].dataset.y = position;
         } else {
             elements[i].dataset.y = y;
+        }
+
+        if (elements[i].dataset.z == undefined) 
+        { z = "0";}
+
+        if (z.substring(0, 1) === '+') {
+            var lastStep = elements[i - 1].dataset.z;
+            var position = parseInt(lastStep) + parseInt(z);
+            elements[i].dataset.z = position;
+        } else if (z.substring(0, 1) === '-') {
+            var lastStep = elements[i - 1].dataset.z;
+            var position = parseInt(lastStep) + parseInt(z);
+            elements[i].dataset.z = position;
+        } else {
+            elements[i].dataset.z = z;
         }
     }
 }
