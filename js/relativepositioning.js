@@ -2,13 +2,11 @@ function relativePositioning() {
     var elements = document.querySelectorAll(".step");
 
     for (var i = 0; i < elements.length; i++) {
-        var x = elements[i].dataset.x; 
+        var x = elements[i].dataset.x;
         var y = elements[i].dataset.y;
         var z = elements[i].dataset.z;
-     if (elements[i].dataset.x == undefined) 
-        { x = "0";}
-        if (!elements[i].dataset.x) {
-        x = 0;
+        if (elements[i].dataset.x == undefined) {
+            x = "0";
         }
         if (x.substring(0, 1) === '+') {
             var lastStep = elements[i - 1].dataset.x;
@@ -22,8 +20,9 @@ function relativePositioning() {
             elements[i].dataset.x = x;
         }
 
-        if (elements[i].dataset.y == undefined) 
-        { y = "0";}
+        if (elements[i].dataset.y == undefined) {
+            y = "0";
+        }
 
         if (y.substring(0, 1) === '+') {
             var lastStep = elements[i - 1].dataset.y;
@@ -37,8 +36,9 @@ function relativePositioning() {
             elements[i].dataset.y = y;
         }
 
-        if (elements[i].dataset.z == undefined) 
-        { z = "0";}
+        if (elements[i].dataset.z == undefined) {
+            z = "0";
+        }
 
         if (z.substring(0, 1) === '+') {
             var lastStep = elements[i - 1].dataset.z;
